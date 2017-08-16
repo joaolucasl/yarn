@@ -7,7 +7,7 @@ const fixturesLoc = path.join(__dirname, 'fixtures', 'rc');
 
 test('resolve .yarnrc args and use --cwd if present', () => {
   const args = getRcArgs('install', ['--cwd', path.join(fixturesLoc, 'empty')]);
-  expect(args.includes('--foo')).toBe(true);
+  expect(args.indexOf('--foo') !== -1).toBe(true);
 });
 
 test('resolve .yarnrc args and use process.cwd() if no --cwd present', () => {
